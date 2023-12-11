@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  "343":
+    image: "343"
+    container_name: Swoole
+    restart: always
+    environment:
+      RuntimeDomain: "host.docker.internal"
+      RuntimeDomainPort: "62481"
+    entrypoint: [
+      "php",
+      "/var/www/html/343/Server.php",
+    ]
+    volumes:
+      - ../343:/var/www/html/343
+    ports:
+      - "62481:62481"
